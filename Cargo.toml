@@ -9,8 +9,8 @@ repository = "https://git.jekel.ca/JZJ/quickbits"
 license = "MIT"
 #license-file = "LICENSE"
 edition = "2021"
-keywords = ["", ""]
-categories = ["", "", ""]
+#keywords = ["", ""]
+#categories = ["", "", ""]
 #default-run = ""
 #documentation = "https://docs.rs/anslatortray/latest/anslatortray/"
 
