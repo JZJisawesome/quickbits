@@ -1,7 +1,7 @@
 [package]
 name = "quickbits"
 version = "0.1.0"
-description = "Coming soon!"
+description = "Fast bit manipulation routines for Rust's native integer types"
 authors = ["John Zacarias Jekel <john@jekel.ca>"]
 readme = "README.md"
 #homepage = ""
