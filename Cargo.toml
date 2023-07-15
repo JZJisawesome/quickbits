@@ -1,8 +1,46 @@
 [package]
 name = "quickbits"
 version = "0.1.0"
+description = "Coming soon!"
+authors = ["John Zacarias Jekel <john@jekel.ca>"]
+readme = "README.md"
+#homepage = ""
+repository = "https://git.jekel.ca/JZJ/quickbits"
+license = "MIT"
+#license-file = "LICENSE"
 edition = "2021"
+keywords = ["", ""]
+categories = ["", "", ""]
+#default-run = ""
+#documentation = "https://docs.rs/anslatortray/latest/anslatortray/"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+#[features]
+#default = []
+#nightly-features = ["nightly-features-benches"]
+#nightly-features-benches = []
 
-[dependencies]
+#[lib]
+#name = "anslatortray"
+#path = "src/lib.rs"
+
+#[[bin]]
+#name = "anslatortray"
+#path = "src/anslatortray.rs"
+
+#[profile.dev]
+#incremental = true
+
+#[profile.release]
+#codegen-units = 1
+#strip = true
+#overflow-checks = false
+#panic = "abort"
+#lto = true
+
+#[profile.release-with-debug]
+#inherits = "release"
+#strip = false
+#overflow-checks = false
+#panic = "abort"
+#lto = false
+#debug = true
