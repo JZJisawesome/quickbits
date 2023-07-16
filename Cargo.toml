@@ -7,7 +7,6 @@ readme = "README.md"
 #homepage = ""
 repository = "https://git.jekel.ca/JZJ/quickbits"
 license = "MIT"
-#license-file = "LICENSE"
 edition = "2021"
 #keywords = ["", ""]
 #categories = ["", "", ""]
@@ -19,28 +18,28 @@ edition = "2021"
 #nightly-features = ["nightly-features-benches"]
 #nightly-features-benches = []
 
-#[lib]
-#name = "anslatortray"
-#path = "src/lib.rs"
+[lib]
+name = "quickbits"
+path = "lib/lib.rs"
 
 #[[bin]]
 #name = "anslatortray"
 #path = "src/anslatortray.rs"
 
-#[profile.dev]
-#incremental = true
+[profile.dev]
+incremental = true
 
-#[profile.release]
-#codegen-units = 1
-#strip = true
-#overflow-checks = false
-#panic = "abort"
-#lto = true
+[profile.release]
+codegen-units = 1
+strip = true
+overflow-checks = false
+panic = "abort"
+lto = true
 
-#[profile.release-with-debug]
-#inherits = "release"
-#strip = false
-#overflow-checks = false
-#panic = "abort"
-#lto = false
-#debug = true
+[profile.release-with-debug]
+inherits = "release"
+strip = false
+overflow-checks = false
+panic = "abort"
+lto = false
+debug = true
