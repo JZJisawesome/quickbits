@@ -1,8 +1,8 @@
 /*
- * File:    bitmanip.rs
+ * File:    TODO.rs
  * Brief:   TODO
  *
- * Copyright: Copyright (C) 2023 John Jekel
+ * Copyright: Copyright (C) TODO John Jekel
  * See the LICENSE file at the root of the project for licensing info.
  *
  * TODO longer description
@@ -13,29 +13,31 @@
  * TODO rustdoc for this file here
 */
 
-#![no_std]
-
 /* ------------------------------------------------------------------------------------------------
  * Submodules
  * --------------------------------------------------------------------------------------------- */
 
-mod bitmanip;
-//mod bititer;
-mod debug_panic;
-mod primitive_integer;
+//TODO (includes "mod ..." and "pub mod ...")
 
 /* ------------------------------------------------------------------------------------------------
  * Uses
  * --------------------------------------------------------------------------------------------- */
 
-pub use bitmanip::BitManip;
-//pub use bititer::BitIterator;
+use core::ops::*;
 
 /* ------------------------------------------------------------------------------------------------
  * Macros
  * --------------------------------------------------------------------------------------------- */
 
-//TODO (also pub(crate) use the_macro statements here too)
+macro_rules! implement_for {
+    ($integer:ty) => {
+        impl PrimitiveInteger for $integer {
+            type BitIndex = u32;//$integer;//To be consistent with BITS
+
+            const BITS: u32 = <$integer>::BITS;
+        }
+    }
+}
 
 /* ------------------------------------------------------------------------------------------------
  * Constants
@@ -65,13 +67,33 @@ pub use bitmanip::BitManip;
  * Traits And Default Implementations
  * --------------------------------------------------------------------------------------------- */
 
-//TODO
+//NOTE: Only includes the features BitManip needs
+pub trait PrimitiveInteger:
+    Sized + Add<Self> + Sub<Self> + Shl<Self> + Shr<Self> + BitAnd<Self> + BitOr<Self> +
+    BitXor<Self> + Not + Copy + Clone + Ord + Eq
+{
+    type BitIndex: PrimitiveInteger/* = Self*/;//Just to allow for flexibility in the future (for a nicer api, this is always u32 to be consistent with BITS)
+
+    const BITS: u32;
+}
 
 /* ------------------------------------------------------------------------------------------------
  * Trait Implementations
  * --------------------------------------------------------------------------------------------- */
 
-//TODO
+implement_for!(u8);
+implement_for!(u16);
+implement_for!(u32);
+implement_for!(u64);
+implement_for!(u128);
+implement_for!(usize);
+
+implement_for!(i8);
+implement_for!(i16);
+implement_for!(i32);
+implement_for!(i64);
+implement_for!(i128);
+implement_for!(isize);
 
 /* ------------------------------------------------------------------------------------------------
  * Functions

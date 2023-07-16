@@ -1,8 +1,8 @@
 /*
- * File:    bitmanip.rs
+ * File:    TODO.rs
  * Brief:   TODO
  *
- * Copyright: Copyright (C) 2023 John Jekel
+ * Copyright: Copyright (C) TODO John Jekel
  * See the LICENSE file at the root of the project for licensing info.
  *
  * TODO longer description
@@ -13,29 +13,46 @@
  * TODO rustdoc for this file here
 */
 
-#![no_std]
-
 /* ------------------------------------------------------------------------------------------------
  * Submodules
  * --------------------------------------------------------------------------------------------- */
 
-mod bitmanip;
-//mod bititer;
-mod debug_panic;
-mod primitive_integer;
+//TODO (includes "mod ..." and "pub mod ...")
 
 /* ------------------------------------------------------------------------------------------------
  * Uses
  * --------------------------------------------------------------------------------------------- */
 
-pub use bitmanip::BitManip;
-//pub use bititer::BitIterator;
+//TODO (includes "use ..." and "extern crate ...")
 
 /* ------------------------------------------------------------------------------------------------
  * Macros
  * --------------------------------------------------------------------------------------------- */
 
-//TODO (also pub(crate) use the_macro statements here too)
+/*macro_rules! debug_panic {
+    //TODO    
+}
+*/
+
+macro_rules! debug_panic_if {//Different than debug_assert since it won't print an error like an
+                             //assertion
+    ($cond:expr $(,)?) => {
+        #[cfg(debug_assertions)]
+        if $cond {
+            //debug_panic!();//TODO
+            panic!();
+        }
+    };
+
+    ($cond:expr, $($arg:tt)+) => {
+        #[cfg(debug_assertions)]
+        if $cond {
+            //debug_panic!($($arg)+);//TODO
+            panic!($($arg)+);
+        }
+    };
+}
+pub(crate) use debug_panic_if;
 
 /* ------------------------------------------------------------------------------------------------
  * Constants

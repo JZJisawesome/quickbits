@@ -1,8 +1,8 @@
 /*
- * File:    bitmanip.rs
+ * File:    bititer.rs
  * Brief:   TODO
  *
- * Copyright: Copyright (C) 2023 John Jekel
+ * Copyright: Copyright (C) TODO John Jekel
  * See the LICENSE file at the root of the project for licensing info.
  *
  * TODO longer description
@@ -13,23 +13,17 @@
  * TODO rustdoc for this file here
 */
 
-#![no_std]
-
 /* ------------------------------------------------------------------------------------------------
  * Submodules
  * --------------------------------------------------------------------------------------------- */
 
-mod bitmanip;
-//mod bititer;
-mod debug_panic;
-mod primitive_integer;
+//TODO (includes "mod ..." and "pub mod ...")
 
 /* ------------------------------------------------------------------------------------------------
  * Uses
  * --------------------------------------------------------------------------------------------- */
 
-pub use bitmanip::BitManip;
-//pub use bititer::BitIterator;
+//TODO (includes "use ..." and "extern crate ...")
 
 /* ------------------------------------------------------------------------------------------------
  * Macros
