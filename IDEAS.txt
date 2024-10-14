@@ -1,0 +1,47 @@
+trait BitManip {
+    fn bit(&self, bit: Self) -> Self;
+    fn bits(&self, top: Self, bottom: Self) -> Self;
+    fn bits_from(&self, bit: Self, length: Self) -> Self;
+    fn sign_extend_from_bit(&self, bit: Self) -> Self;
+    fn sign_extend_from_size(&self, size: Self) -> Self;
+
+    fn bit_set(&self, bit: Self) -> Self;
+    fn bit_clear(&self, bit: Self) -> Self;
+    fn bit_toggle(&self, bit: Self) -> Self;
+}
+
+impl BitManip for u32 {
+    fn bit(&self, bit: Self) -> Self {
+        self.bits(bit, bit)
+    }
+
+    fn bits(&self, high: Self, low: Self) -> Self {
+        let length = high - low + 1;
+        self.bits_from(low, length)
+    }
+
+    fn bits_from(&self, bit: Self, length: Self) -> Self {
+        let mask = (1 << length) - 1;
+        (self >> bit) & mask
+    }
+
+    fn sign_extend_from_bit(&self, bit: Self) -> Self {
+        (((self << (31 - bit)) as i32) >> (31 - bit)) as u32
+    }
+
+    fn sign_extend_from_size(&self, size: Self) -> Self {
+        self.sign_extend_from_bit(size - 1)
+    }
+
+    fn bit_set(&self, bit: Self) -> Self {
+        self | (1 << bit)
+    }
+
+    fn bit_clear(&self, bit: Self) -> Self {
+        self & !(1 << bit)
+    }
+
+    fn bit_toggle(&self, bit: Self) -> Self {
+        self ^ (1 << bit)
+    }
+}
