@@ -1,6 +1,6 @@
 [package]
 name = "quickbits"
-version = "0.1.0"
+version = "0.1.1"
 description = "Fast bit manipulation routines for Rust's native integer types"
 authors = ["John Zacarias Jekel <john@jekel.ca>"]
 readme = "README.md"
@@ -11,7 +11,7 @@ edition = "2021"
 #keywords = ["", ""]
 #categories = ["", "", ""]
 #default-run = ""
-#documentation = "https://docs.rs/anslatortray/latest/anslatortray/"
+documentation = "https://docs.rs/quickbits/latest/quickbits/"
 
 #[features]
 #default = []
@@ -21,10 +21,6 @@ edition = "2021"
 [lib]
 name = "quickbits"
 path = "lib/lib.rs"
-
-#[[bin]]
-#name = "anslatortray"
-#path = "src/anslatortray.rs"
 
 [profile.dev]
 incremental = true
